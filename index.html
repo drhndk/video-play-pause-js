@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Video Play-Pause Js</title>
+  </head>
+  <style>
+    *,
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    .trailer {
+      position: fixed;
+      bottom: 0;
+      min-width: 100%;
+      min-height: 100%;
+    }
+
+    .logo {
+      position: fixed;
+      bottom: 0;
+      background-color: #ffffff10;
+      font-size: 20px;
+      color: bisque;
+      width: 100%;
+    }
+    img {
+      height: 120px;
+      width: 120px;
+    }
+
+    .btn {
+      font-weight: 800;
+      background-color: black;
+      color: crimson;
+      padding: 8px;
+      border: none;
+      margin-top: 20px;
+      width: 200px;
+      cursor: pointer;
+      margin-bottom: 10px;
+    }
+  </style>
+  <body>
+    <video class="trailer" autoplay muted loop src="game_trailer.mp4"></video>
+
+    <center class="logo">
+      <img src="roblox-logo.png" alt="" />
+      <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Perspiciatis est magni repellendus</p>
+      <button class="btn">PAUSE</button>
+    </center>
+
+    <script>
+      const btn = document.querySelector(".btn");
+      const trailer = document.querySelector(".trailer");
+
+      btn.addEventListener("click", () => {
+        if (trailer.paused) {
+          trailer.play();
+          btn.innerHTML = "PAUSE";
+        } else {
+          trailer.pause();
+          btn.innerHTML = "PLAY";
+        }
+      });
+    </script>
+  </body>
+</html>
